@@ -1,0 +1,14 @@
+from sqlalchemy import Column, Integer, String
+from app.core.database import Base
+
+class Document(Base):
+    __tablename__ = "documents"
+
+    id = Column(Integer, primary_key=True, index=True)
+    filename = Column(String)
+    filepath = Column(String)
+
+    # Metadata
+    case_name = Column(String)
+    judgment_date = Column(String)
+    judge = Column(String)
